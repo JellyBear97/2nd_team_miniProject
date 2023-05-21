@@ -106,7 +106,11 @@ def commentInfo_post():
       r_ids.sort(reverse=True)
       r_id = int(r_ids[0]) + 1
 
+    from datetime import datetime
+    when = datetime.today().strftime("%Y-%m-%d %H:%M")
+
     doc = {
+        'datetime' : when,
         'p_id' : p_id,
         'r_id' : r_id,
         'comment_name' : comment_name_receive,

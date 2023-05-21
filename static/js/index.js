@@ -157,6 +157,7 @@ function toShowMoreInfo(pre_p_id) {
       console.log(comments);
       $('#comment-list').empty();
       comments.forEach((a) => {
+        let datetime = a['datetime'];
         let p_id = a['p_id'];
         console.log(p_id);
         let r_id = a['r_id'];
@@ -182,7 +183,7 @@ function toShowMoreInfo(pre_p_id) {
               class="sbcomment" 
               disabled>${comment}</textarea>
           </div>
-          <div class="comment-get-items comment-get-bottom"><span>2023.05.15. 11:48</span></div>
+          <div class="comment-get-items comment-get-bottom"><span>${datetime}</span></div>
         </div>
         `;
         $('#comment-list').append(temp_html);
@@ -218,6 +219,7 @@ function commentPosting(pre_p_id) {
       alert(data['msg']);
       $('#comment-name').val('');
       $('#comment').val('');
+      location.reload();
     });
 }
 
